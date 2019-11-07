@@ -1,0 +1,205 @@
+---
+title: "Reproducibility Report"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+[TEXT IN SQUARE BRACKETS IS HERE FOR GUIDANCE. PLEASE DELETE TEXT IN SQUARE BRACKETS BEFORE KNITTING THE FINAL REPORT]
+
+# Report Details
+
+[PILOT/COPILOT ENTER RELEVANT REPORT DETAILS HERE]
+
+```{r}
+articleID <- '2-10-2014' # insert the article ID code here e.g., "10-3-2015"
+reportType <- 'pilot' # specify whether this is the 'pilot' report or 'copilot' report
+pilotNames <- 'Jacob William Keith Ritchie' # insert the pilot's name here e.g., "Tom Hardwicke".
+copilotNames <- 'Jackie Yang' # # insert the co-pilot's name here e.g., "Michael Frank".
+pilotTTC <- 20 + 10 +  # insert the pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
+copilotTTC <- NA # insert the co-pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
+pilotStartDate <- as.Date("11/06/19", format = "%m/%d/%y")   # insert the piloting start date in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
+copilotStartDate <- NA # insert the co-piloting start date in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
+completionDate <- NA # insert the date of final report completion in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
+```
+
+------
+
+#### Methods summary: 
+
+This study uses a time capsule methodology. Undergraduate students answered questions describing their current experiences (social events, a question from a recent exam, a conversation) and were asked to predict how curious they would be about these experiences and how interesting they would find them (broken down into three dimensions: surprising, meaningful and interesting). Then, 3 months later they reviewed their responses and rated how curious they actually were about their answers, and how interesting they actually found them.
+
+------
+
+#### Target outcomes: 
+
+For this article you should focus on the findings reported in the results section for Study 1 (and Table 1).
+
+Specifically, you should attempt to reproduce all descriptive and inferential analyses reported in the text below and associated tables/figures:
+
+> Table 1 provides descriptive statistics for each measure
+for Study 1.
+
+> Participants’ Time 1 predictions of their curiosity (M = 3.99, SD = 1.32) were lower than their actual curiosity ratings at Time 2, immediately before reading their responses (M = 4.34, SD = 1.25), t(105) = 2.88, p = .005, d = 0.27. Participants also underestimated how interesting they would find their responses. Predictions of interest at Time 1 (M = 3.54, SD = 1.01) were lower than ratings of actual interest experienced at Time 2 (M = 3.82, SD = 0.89), t(105) = 3.10, p = .003, d = 0.29.
+
+**Note**
+Make sure to use the original article for additional context and information about any necessary pre-processing steps. Also check for additional supplementary materials that may provide supporting documentation for analysis procedures.
+------
+
+[PILOT/COPILOT DO NOT CHANGE THE CODE IN THE CHUNK BELOW]  
+
+```{r global_options, include=FALSE}
+# sets up some formatting options for the R Markdown document
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
+```
+
+# Step 1: Load packages and prepare report object
+
+[PILOT/COPILOT Some useful packages are being loaded below. You can add any additional ones you might need too.]
+
+```{r}
+# load packages
+library(tidyverse) # for data munging
+library(knitr) # for kable table formating
+library(haven) # import and export 'SPSS', 'Stata' and 'SAS' Files
+library(readxl) # import excel files
+library(ReproReports) # custom reporting functions
+library(broom)
+```
+
+[PILOT/COPILOT DO NOT MAKE CHANGES TO THE CODE CHUNK BELOW]
+
+```{r}
+# Prepare report object. This will be updated automatically by the reproCheck function each time values are compared
+reportObject <- data.frame(dummyRow = TRUE, reportedValue = NA, obtainedValue = NA, valueType = NA, percentageError = NA, comparisonOutcome = NA, eyeballCheck = NA)
+```
+
+# Step 2: Load data
+
+```{r}
+data = read_sav("../data/Study1_Data.sav")
+```
+
+# Step 3: Tidy data
+
+```{r}
+
+data$id <- seq.int(nrow(data)) 
+
+tidy_data <- data %>% 
+  filter(T2_Finished == 1) %>% 
+  select("id", contains("Interesting"), contains("Curious"), contains("Meaningful"), contains("Surprised"), -contains("diff"), -c("T1_Interesting", "T2_Interesting","T1_Curious", "T2_Curious","T1_Meaningful", "T2_Meaningful","T1_Surprised", "T2_Surprised")) %>%
+  gather(measurement,score, -"id") %>% 
+  mutate(time = sub("(.*)_.*_.*","\\1", measurement),
+         item = sub(".*_(.*)_.*","\\1", measurement),
+         measure = tolower(sub(".*_.*_(.*)","\\1", measurement)), # case is inconsistent, so make all lowercase
+         interest_measure = factor(measure != "curious", , labels = c("curious", "interesting"))) 
+```
+
+# Step 4: Run analysis
+
+## Pre-processing
+
+```{r}
+
+aggregated_data = tidy_data %>%  group_by(id,time,interest_measure) %>% 
+  summarise(avg_score = mean(score, na.rm = T)) %>% 
+  spread(time,avg_score) %>%
+  mutate(diff = (T2 - T1)) %>%
+  group_by(interest_measure) #%>% 
+  summarise(avg_diff = mean(diff, na.rm = T))
+
+curious_data <- aggregated_data %>% filter(interest_measure == "curious")
+
+interesting_data <- aggregated_data %>% filter(interest_measure == "interesting")
+
+un_aggregated_data = tidy_data %>%  group_by(id,time,measure) %>% 
+  summarise(avg_score = mean(score, na.rm = T)) %>% 
+  spread(time,avg_score) %>%
+  mutate(diff = (T2 - T1)) %>%
+  group_by(measure) #%>% 
+  summarise(avg_diff = mean(diff, na.rm = T))
+  
+un_aggregated_interesting_data <- un_aggregated_data %>% filter(measure == "interesting")
+meaningful_data <- un_aggregated_data %>% filter(measure == "meaningful")
+surprising_data <- un_aggregated_data %>% filter(measure == "surprising")
+
+```
+
+## Descriptive statistics
+
+```{r}
+reportObject <- data.frame(dummyRow = TRUE, reportedValue = NA, obtainedValue = NA, valueType = NA, percentageError = NA, comparisonOutcome = NA, eyeballCheck = NA)
+
+bootES(curious_data, R=10000, data.col="T1")
+ebootES(curious_data, R=10000, data.col="T2")
+bootES(curious_data, R=10000, data.col="diff")
+
+bootES(interesting_data, R=10000, data.col="T1")
+bootES(interesting_data, R=10000, data.col="T2")
+bootES(interesting_data, R=10000, data.col="diff")
+
+bootES(un_aggregated_interesting_data, R=10000, data.col="T1")
+bootES(un_aggregated_interesting_data, R=10000, data.col="T2")
+bootES(un_aggregated_interesting_data, R=10000, data.col="diff")
+
+```
+
+## Inferential statistics
+
+```{r}
+
+t.test(interesting_data$T1,interesting_data$T2,paired = T)
+
+tx <- t.test(curious_data$T1,curious_data$T2,paired = T)
+reproCheck(".005",tx$p.value,valueType = 'p')
+
+t.test(un_aggregated_interesting_data$T1,un_aggregated_interesting_data$T2,paired = T)
+
+
+```
+
+# Step 5: Conclusion
+
+It was successful! The errors in the Bootstrapped 95% CIs are very small (about the same size as the variation between different runs).
+
+
+[PILOT/COPILOT DOD NOT EDIT THE CODE CHUNK BELOW]
+
+```{r}
+reportObject <- reportObject %>%
+  filter(dummyRow == FALSE) %>% # remove the dummy row
+  select(-dummyRow) %>% # remove dummy row designation
+  mutate(articleID = articleID) %>% # add variables to report 
+  select(articleID, everything()) # make articleID first column
+
+# decide on final outcome
+if(any(reportObject$comparisonOutcome %in% c("MAJOR_ERROR", "DECISION_ERROR"))){
+  finalOutcome <- "Failure"
+}else{
+  finalOutcome <- "Success"
+}
+
+# collate report extra details
+reportExtras <- data.frame(articleID, pilotNames, copilotNames, pilotTTC, copilotTTC, pilotStartDate, copilotStartDate, completionDate, finalOutcome)
+
+# save report objects
+if(reportType == "pilot"){
+  write_csv(reportObject, "pilotReportDetailed.csv")
+  write_csv(reportExtras, "pilotReportExtras.csv")
+}
+
+if(reportType == "copilot"){
+  write_csv(reportObject, "copilotReportDetailed.csv")
+  write_csv(reportExtras, "copilotReportExtras.csv")
+}
+```
+
+# Session information
+
+[This function will output information about the package versions used in this report:]
+
+```{r session_info, include=TRUE, echo=TRUE, results='markup'}
+devtools::session_info()
+```
