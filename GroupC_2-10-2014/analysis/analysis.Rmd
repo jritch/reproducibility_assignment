@@ -17,11 +17,11 @@ articleID <- '2-10-2014' # insert the article ID code here e.g., "10-3-2015"
 reportType <- 'pilot' # specify whether this is the 'pilot' report or 'copilot' report
 pilotNames <- 'Jacob William Keith Ritchie' # insert the pilot's name here e.g., "Tom Hardwicke".
 copilotNames <- 'Jackie Yang' # # insert the co-pilot's name here e.g., "Michael Frank".
-pilotTTC <- 20 + 10 +  # insert the pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
-copilotTTC <- NA # insert the co-pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
+pilotTTC <- 180  # insert the pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
+copilotTTC <- 20 # insert the co-pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
 pilotStartDate <- as.Date("11/06/19", format = "%m/%d/%y")   # insert the piloting start date in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
-copilotStartDate <- NA # insert the co-piloting start date in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
-completionDate <- NA # insert the date of final report completion in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
+copilotStartDate <- as.Date("11/07/19", format = "%m/%d/%y") # insert the co-piloting start date in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
+completionDate <- as.Date("11/07/19", format = "%m/%d/%y") # insert the date of final report completion in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
 ```
 
 ------
@@ -66,6 +66,7 @@ library(haven) # import and export 'SPSS', 'Stata' and 'SAS' Files
 library(readxl) # import excel files
 library(ReproReports) # custom reporting functions
 library(broom)
+library(bootES)
 ```
 
 [PILOT/COPILOT DO NOT MAKE CHANGES TO THE CODE CHUNK BELOW]
@@ -107,8 +108,7 @@ aggregated_data = tidy_data %>%  group_by(id,time,interest_measure) %>%
   summarise(avg_score = mean(score, na.rm = T)) %>% 
   spread(time,avg_score) %>%
   mutate(diff = (T2 - T1)) %>%
-  group_by(interest_measure) #%>% 
-  summarise(avg_diff = mean(diff, na.rm = T))
+  group_by(interest_measure)  
 
 curious_data <- aggregated_data %>% filter(interest_measure == "curious")
 
@@ -118,10 +118,9 @@ un_aggregated_data = tidy_data %>%  group_by(id,time,measure) %>%
   summarise(avg_score = mean(score, na.rm = T)) %>% 
   spread(time,avg_score) %>%
   mutate(diff = (T2 - T1)) %>%
-  group_by(measure) #%>% 
-  summarise(avg_diff = mean(diff, na.rm = T))
+  group_by(measure) 
   
-surprising_data <- un_aggregated_data %>% filter(measure == "surprising")
+surprising_data <- un_aggregated_data %>% filter(measure == "surprised")
 meaningful_data <- un_aggregated_data %>% filter(measure == "meaningful")
 un_aggregated_interesting_data <- un_aggregated_data %>% filter(measure == "interesting")
 
@@ -130,7 +129,6 @@ un_aggregated_interesting_data <- un_aggregated_data %>% filter(measure == "inte
 ## Descriptive statistics
 
 ```{r}
-reportObject <- data.frame(dummyRow = TRUE, reportedValue = NA, obtainedValue = NA, valueType = NA, percentageError = NA, comparisonOutcome = NA, eyeballCheck = NA)
 
 boot_results = bootES(curious_data, R=10000, data.col="T1")
 reproCheck('3.99', boot_results$t0, valueType="mean")
