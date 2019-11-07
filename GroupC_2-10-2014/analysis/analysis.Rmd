@@ -121,9 +121,9 @@ un_aggregated_data = tidy_data %>%  group_by(id,time,measure) %>%
   group_by(measure) #%>% 
   summarise(avg_diff = mean(diff, na.rm = T))
   
-un_aggregated_interesting_data <- un_aggregated_data %>% filter(measure == "interesting")
-meaningful_data <- un_aggregated_data %>% filter(measure == "meaningful")
 surprising_data <- un_aggregated_data %>% filter(measure == "surprising")
+meaningful_data <- un_aggregated_data %>% filter(measure == "meaningful")
+un_aggregated_interesting_data <- un_aggregated_data %>% filter(measure == "interesting")
 
 ```
 
@@ -132,17 +132,90 @@ surprising_data <- un_aggregated_data %>% filter(measure == "surprising")
 ```{r}
 reportObject <- data.frame(dummyRow = TRUE, reportedValue = NA, obtainedValue = NA, valueType = NA, percentageError = NA, comparisonOutcome = NA, eyeballCheck = NA)
 
-bootES(curious_data, R=10000, data.col="T1")
-ebootES(curious_data, R=10000, data.col="T2")
-bootES(curious_data, R=10000, data.col="diff")
+boot_results = bootES(curious_data, R=10000, data.col="T1")
+reproCheck('3.99', boot_results$t0, valueType="mean")
+reproCheck('3.74', boot_results$bounds[1], valueType="mean")
+reproCheck('4.24', boot_results$bounds[2], valueType="ci")
 
-bootES(interesting_data, R=10000, data.col="T1")
-bootES(interesting_data, R=10000, data.col="T2")
-bootES(interesting_data, R=10000, data.col="diff")
+boot_results = bootES(curious_data, R=10000, data.col="T2")
+reproCheck('4.34', boot_results$t0, valueType="mean")
+reproCheck('4.10', boot_results$bounds[1], valueType="mean")
+reproCheck('4.58', boot_results$bounds[2], valueType="ci")
 
-bootES(un_aggregated_interesting_data, R=10000, data.col="T1")
-bootES(un_aggregated_interesting_data, R=10000, data.col="T2")
-bootES(un_aggregated_interesting_data, R=10000, data.col="diff")
+boot_results = bootES(curious_data, R=10000, data.col="diff")
+reproCheck('0.35', boot_results$t0, valueType="mean")
+reproCheck('0.11', boot_results$bounds[1], valueType="mean")
+reproCheck('0.59', boot_results$bounds[2], valueType="ci")
+
+std_dev = sd(curious_data$T1)
+reproCheck('1.32', std_dev, valueType="sd")
+std_dev = sd(curious_data$T2)
+reproCheck('1.25', std_dev, valueType="sd")
+
+boot_results = bootES(interesting_data, R=10000, data.col="T1")
+reproCheck('3.54', boot_results$t0, valueType="mean")
+reproCheck('3.34', boot_results$bounds[1], valueType="mean")
+reproCheck('3.73', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(interesting_data, R=10000, data.col="T2")
+reproCheck('3.82', boot_results$t0, valueType="mean")
+reproCheck('3.65', boot_results$bounds[1], valueType="mean")
+reproCheck('4.00', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(interesting_data, R=10000, data.col="diff")
+reproCheck('0.29', boot_results$t0, valueType="mean")
+reproCheck('0.10', boot_results$bounds[1], valueType="ci")
+reproCheck('0.47', boot_results$bounds[2], valueType="ci")
+
+std_dev = sd(interesting_data$T1)
+reproCheck('1.01', std_dev, valueType="sd")
+std_dev = sd(interesting_data$T2)
+reproCheck('0.89', std_dev, valueType="sd")
+
+boot_results = bootES(surprising_data, R=10000, data.col="T1")
+reproCheck('2.84', boot_results$t0, valueType="mean")
+reproCheck('2.64', boot_results$bounds[1], valueType="ci")
+reproCheck('3.05', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(surprising_data, R=10000, data.col="T2")
+reproCheck('3.25', boot_results$t0, valueType="mean")
+reproCheck('3.06', boot_results$bounds[1], valueType="ci")
+reproCheck('3.44', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(surprising_data, R=10000, data.col="diff")
+reproCheck('0.40', boot_results$t0, valueType="mean")
+reproCheck('0.19', boot_results$bounds[1], valueType="ci")
+reproCheck('0.62', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(meaningful_data, R=10000, data.col="T1")
+reproCheck('3.81', boot_results$t0, valueType="mean")
+reproCheck('3.60', boot_results$bounds[1], valueType="mean")
+reproCheck('4.03', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(meaningful_data, R=10000, data.col="T2")
+reproCheck('4.04', boot_results$t0, valueType="mean")
+reproCheck('3.84', boot_results$bounds[1], valueType="mean")
+reproCheck('4.23', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(meaningful_data, R=10000, data.col="diff")
+reproCheck('0.22', boot_results$t0, valueType="mean")
+reproCheck('0.03', boot_results$bounds[1], valueType="mean")
+reproCheck('0.42', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(un_aggregated_interesting_data, R=10000, data.col="T1")
+reproCheck('3.95', boot_results$t0, valueType="mean")
+reproCheck('3.73', boot_results$bounds[1], valueType="mean")
+reproCheck('4.18', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(un_aggregated_interesting_data, R=10000, data.col="T2")
+reproCheck('4.19', boot_results$t0, valueType="mean")
+reproCheck('4.00', boot_results$bounds[1], valueType="mean")
+reproCheck('4.38', boot_results$bounds[2], valueType="ci")
+
+boot_results = bootES(un_aggregated_interesting_data, R=10000, data.col="diff")
+reproCheck('0.23', boot_results$t0, valueType="mean")
+reproCheck('0.02', boot_results$bounds[1], valueType="mean")
+reproCheck('0.45', boot_results$bounds[2], valueType="ci")
 
 ```
 
@@ -150,12 +223,20 @@ bootES(un_aggregated_interesting_data, R=10000, data.col="diff")
 
 ```{r}
 
-t.test(interesting_data$T1,interesting_data$T2,paired = T)
+t_test_results <- t.test(curious_data$T1,curious_data$T2,paired = T)
+reproCheck(".005",t_test_results$p.value,valueType = 'p')
 
-tx <- t.test(curious_data$T1,curious_data$T2,paired = T)
-reproCheck(".005",tx$p.value,valueType = 'p')
+t_test_results <- t.test(interesting_data$T1,interesting_data$T2,paired = T)
+reproCheck(".003",t_test_results$p.value,valueType = 'p')
 
-t.test(un_aggregated_interesting_data$T1,un_aggregated_interesting_data$T2,paired = T)
+t_test_results <- t.test(surprising_data$T1,surprising_data$T2,paired = T)
+reproCheck("P < 0.001",t_test_results$p.value,valueType = 'p',eyeballCheck = T)
+
+t_test_results <- t.test(meaningful_data$T1,meaningful_data$T2,paired = T)
+reproCheck(".02",t_test_results$p.value,valueType = 'p')
+
+t_test_results <- t.test(un_aggregated_interesting_data$T1,un_aggregated_interesting_data$T2,paired = T)
+reproCheck(".03",t_test_results$p.value,valueType = 'p')
 
 
 ```
@@ -163,6 +244,8 @@ t.test(un_aggregated_interesting_data$T1,un_aggregated_interesting_data$T2,paire
 # Step 5: Conclusion
 
 It was successful! The errors in the Bootstrapped 95% CIs are very small (about the same size as the variation between different runs).
+
+I think there is one error in the paper - they reported the effect size wrong. (0.29 instead of 0.21)
 
 
 [PILOT/COPILOT DOD NOT EDIT THE CODE CHUNK BELOW]
