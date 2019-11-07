@@ -67,6 +67,7 @@ library(readxl) # import excel files
 library(ReproReports) # custom reporting functions
 library(broom)
 library(bootES)
+library(effsize)
 ```
 
 [PILOT/COPILOT DO NOT MAKE CHANGES TO THE CODE CHUNK BELOW]
@@ -150,6 +151,9 @@ reproCheck('1.32', std_dev, valueType="sd")
 std_dev = sd(curious_data$T2)
 reproCheck('1.25', std_dev, valueType="sd")
 
+cohen_d = cohen.d(curious_data$T2,curious_data$T1)
+reproCheck('0.27', cohen_d$estimate, valueType="d")
+
 boot_results = bootES(interesting_data, R=10000, data.col="T1")
 reproCheck('3.54', boot_results$t0, valueType="mean")
 reproCheck('3.34', boot_results$bounds[1], valueType="mean")
@@ -169,6 +173,9 @@ std_dev = sd(interesting_data$T1)
 reproCheck('1.01', std_dev, valueType="sd")
 std_dev = sd(interesting_data$T2)
 reproCheck('0.89', std_dev, valueType="sd")
+
+cohen_d = cohen.d(interesting_data$T2,interesting_data$T1)
+reproCheck('0.29', cohen_d$estimate, valueType="d")
 
 boot_results = bootES(surprising_data, R=10000, data.col="T1")
 reproCheck('2.84', boot_results$t0, valueType="mean")
