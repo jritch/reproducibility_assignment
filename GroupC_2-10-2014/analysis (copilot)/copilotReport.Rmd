@@ -6,22 +6,18 @@ output:
     toc_float: true
 ---
 
-[TEXT IN SQUARE BRACKETS IS HERE FOR GUIDANCE. PLEASE DELETE TEXT IN SQUARE BRACKETS BEFORE KNITTING THE FINAL REPORT]
-
 # Report Details
-
-[PILOT/COPILOT ENTER RELEVANT REPORT DETAILS HERE]
 
 ```{r}
 articleID <- '2-10-2014' # insert the article ID code here e.g., "10-3-2015"
-reportType <- 'pilot' # specify whether this is the 'pilot' report or 'copilot' report
+reportType <- 'copilot' # specify whether this is the 'pilot' report or 'copilot' report
 pilotNames <- 'Jacob William Keith Ritchie' # insert the pilot's name here e.g., "Tom Hardwicke".
 copilotNames <- 'Jackie Yang' # # insert the co-pilot's name here e.g., "Michael Frank".
-pilotTTC <- 180  # insert the pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
+pilotTTC <- 200  # insert the pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
 copilotTTC <- 20 # insert the co-pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
 pilotStartDate <- as.Date("11/06/19", format = "%m/%d/%y")   # insert the piloting start date in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
 copilotStartDate <- as.Date("11/07/19", format = "%m/%d/%y") # insert the co-piloting start date in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
-completionDate <- as.Date("11/07/19", format = "%m/%d/%y") # insert the date of final report completion in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
+completionDate <- as.Date("11/10/19", format = "%m/%d/%y") # insert the date of final report completion in US format e.g., as.Date("01/25/18", format = "%m/%d/%y")
 ```
 
 ------
@@ -47,16 +43,12 @@ for Study 1.
 Make sure to use the original article for additional context and information about any necessary pre-processing steps. Also check for additional supplementary materials that may provide supporting documentation for analysis procedures.
 ------
 
-[PILOT/COPILOT DO NOT CHANGE THE CODE IN THE CHUNK BELOW]  
-
 ```{r global_options, include=FALSE}
 # sets up some formatting options for the R Markdown document
 knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
 ```
 
 # Step 1: Load packages and prepare report object
-
-[PILOT/COPILOT Some useful packages are being loaded below. You can add any additional ones you might need too.]
 
 ```{r}
 # load packages
@@ -69,8 +61,6 @@ library(broom)
 library(bootES)
 library(effsize)
 ```
-
-[PILOT/COPILOT DO NOT MAKE CHANGES TO THE CODE CHUNK BELOW]
 
 ```{r}
 # Prepare report object. This will be updated automatically by the reproCheck function each time values are compared
@@ -103,6 +93,11 @@ tidy_data <- data %>%
 
 ## Pre-processing
 
+There are five measures - curiosity, interest, meaningfulness, surprise and un-aggregated interest.
+
+We take the mean of each measure across every question in the time capsule, and then across all the participants.
+
+There are two measures that are both called interest. Aggregated interest is the mean of the three measures interest, surprise and un-aggregated interest. 
 ```{r}
 
 aggregated_data = tidy_data %>%  group_by(id,time,interest_measure) %>% 
@@ -111,10 +106,12 @@ aggregated_data = tidy_data %>%  group_by(id,time,interest_measure) %>%
   mutate(diff = (T2 - T1)) %>%
   group_by(interest_measure)  
 
+# interest_measure column splits the data into curiosity and aggregated interest
 curious_data <- aggregated_data %>% filter(interest_measure == "curious")
 
 interesting_data <- aggregated_data %>% filter(interest_measure == "interesting")
 
+# the measure column splits the data into the four un-aggregated measures (Curiosity, surprise, meaningfulness and interest )
 un_aggregated_data = tidy_data %>%  group_by(id,time,measure) %>% 
   summarise(avg_score = mean(score, na.rm = T)) %>% 
   spread(time,avg_score) %>%
@@ -128,6 +125,11 @@ un_aggregated_interesting_data <- un_aggregated_data %>% filter(measure == "inte
 ```
 
 ## Descriptive statistics
+There is a large amount of repetition in this section, but we calculate means and 95% confidence intervals for all five measures at T1 and T2, and for the difference between T1 and T2, as reported in Table 1.
+
+We also calculate standard deviations for the curiosity and aggregated interest measures, and cohen's d for the standard effect size of the difference between them, which are specified in the text.
+
+The authors do not specify what method they used to calculate the 95% confidence intervals.
 
 ```{r}
 
@@ -226,6 +228,8 @@ reproCheck('0.45', boot_results$bounds[2], valueType="ci")
 
 ## Inferential statistics
 
+For each of the 5 measures, we verify using a paired t-test that there is a significant difference between the distribution of the curiosity + interest measures at T1 and T2.
+
 ```{r}
 
 t_test_results <- t.test(curious_data$T2,curious_data$T1,paired = T)
@@ -244,15 +248,18 @@ reproCheck(".02",t_test_results$p.value,valueType = 'p')
 
 t_test_results <- t.test(un_aggregated_interesting_data$T2,un_aggregated_interesting_data$T1,paired = T)
 reproCheck(".03",t_test_results$p.value,valueType = 'p')
-
-
 ```
 
 # Step 5: Conclusion
 
-It was successful! The errors in the Bootstrapped 95% CIs are very small (about the same size as the variation between different runs). There is also a small rounding error in p value.
+We consider the reproduction successful, even though there was one major error and several minor errors. The minor errors in the Bootstrapped 95% CIs are very small (about the same size as the variation between different runs, since the bootstrapping results in slightly different CI bounds each time the analysis is performed). 
 
-[PILOT/COPILOT DOD NOT EDIT THE CODE CHUNK BELOW]
+There is also a small rounding error in the p value for the aggregated interest measure (The calculated value is 0.002477 and the reported value is 0.003). This doesn't result in a decision error, and in fact the rounded value is more conservative. It's easy to see how the authors might have rounded this incorrectly if SPSS reported the value as 0.0025.
+
+The major error in Cohen's d reported in the pilot report was the result of a code error that was caught during co-piloting. There was a minor error, however (reported 0.29 vs. calculated 0.30) - we are not sure why this error might have occured.
+
+The pilot added some explanatory comments to this document after the in-person co-piloting was finished.
+
 
 ```{r}
 reportObject <- reportObject %>%

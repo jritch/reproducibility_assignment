@@ -1507,597 +1507,317 @@ div.tocify {
 </div>
 
 
-<p>[TEXT IN SQUARE BRACKETS IS HERE FOR GUIDANCE. PLEASE DELETE TEXT IN SQUARE BRACKETS BEFORE KNITTING THE FINAL REPORT]</p>
 <div id="report-details" class="section level1">
 <h1>Report Details</h1>
-<p>[PILOT/COPILOT ENTER RELEVANT REPORT DETAILS HERE]</p>
-<pre class="r"><code>articleID &lt;- &#39;2-10-2014&#39; # insert the article ID code here e.g., &quot;10-3-2015&quot;
-reportType &lt;- &#39;pilot&#39; # specify whether this is the &#39;pilot&#39; report or &#39;copilot&#39; report
-pilotNames &lt;- &#39;Jacob William Keith Ritchie&#39; # insert the pilot&#39;s name here e.g., &quot;Tom Hardwicke&quot;.
-copilotNames &lt;- &#39;Jackie Yang&#39; # # insert the co-pilot&#39;s name here e.g., &quot;Michael Frank&quot;.
-pilotTTC &lt;- 180  # insert the pilot&#39;s estimated time to complete (in minutes, it is fine to approximate) e.g., 120
-copilotTTC &lt;- 20 # insert the co-pilot&#39;s estimated time to complete (in minutes, it is fine to approximate) e.g., 120
-pilotStartDate &lt;- as.Date(&quot;11/06/19&quot;, format = &quot;%m/%d/%y&quot;)   # insert the piloting start date in US format e.g., as.Date(&quot;01/25/18&quot;, format = &quot;%m/%d/%y&quot;)
+<pre class="r"><code>articleID &lt;- &quot;9-2-2015&quot;
+reportType &lt;- &quot;copilot&quot;
+pilotNames &lt;- &quot;Jackie Yang&quot;
+copilotNames &lt;- &quot;Jacob William Keith Ritchie&quot; # # insert the co-pilot's name here e.g., &quot;Michael Frank&quot;.
+pilotTTC &lt;- 180 # insert the pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
+copilotTTC &lt;- 30 # insert the co-pilot's estimated time to complete (in minutes, it is fine to approximate) e.g., 120
+pilotStartDate &lt;- as.Date(&quot;11/03/19&quot;, format = &quot;%m/%d/%y&quot;)
 copilotStartDate &lt;- as.Date(&quot;11/07/19&quot;, format = &quot;%m/%d/%y&quot;) # insert the co-piloting start date in US format e.g., as.Date(&quot;01/25/18&quot;, format = &quot;%m/%d/%y&quot;)
 completionDate &lt;- as.Date(&quot;11/07/19&quot;, format = &quot;%m/%d/%y&quot;) # insert the date of final report completion in US format e.g., as.Date(&quot;01/25/18&quot;, format = &quot;%m/%d/%y&quot;)</code></pre>
 <hr />
 <div id="methods-summary" class="section level4">
 <h4>Methods summary:</h4>
-<p>This study uses a time capsule methodology. Undergraduate students answered questions describing their current experiences (social events, a question from a recent exam, a conversation) and were asked to predict how curious they would be about these experiences and how interesting they would find them (broken down into three dimensions: surprising, meaningful and interesting). Then, 3 months later they reviewed their responses and rated how curious they actually were about their answers, and how interesting they actually found them.</p>
+<p>I will do some simple statistics to confirm the ratios mentioned in the paper is correct. I will do chi-square test to confirm the statistics result from the paper.</p>
 <hr />
 </div>
 <div id="target-outcomes" class="section level4">
 <h4>Target outcomes:</h4>
-<p>For this article you should focus on the findings reported in the results section for Study 1 (and Table 1).</p>
-<p>Specifically, you should attempt to reproduce all descriptive and inferential analyses reported in the text below and associated tables/figures:</p>
 <blockquote>
-<p>Table 1 provides descriptive statistics for each measure for Study 1.</p>
+<p>On the presurprise trials, 89% of responses in the location task were correct, which indicates that participants could easily locate the target by using the critical attribute. To analyze the data from the surprise trial, we first divided participants into two groups defined by the order of the surprise tasks (identity task first vs. color task first). We found that the results were almost the same in these two groups. Accordingly, we combined the data for these groups in the analyses reported here. Only 6 of 20 (30%) participants correctly reported the color of the target letter, which is not much better than chance level of 25% (because there were four choices). Furthermore, performance on the identity task (25% correct) was exactly at chance level. These results demonstrate that participants were not capable of reporting a task-relevant attribute of a stimulus that had reached awareness less than 1 s before (i.e., attribute amnesia). Moreover, in the surprise trial, participants’ performance on the location task, unlike their performance on the color and identity tasks, was good (80% correct), and in fact was approximately as good as their performance on the location task in the presurprise trials (89% correct). This indicates that the poor performance on the color and identity tasks was not induced by the surprise test itself; it more likely reflects participants’ failure to remember these attributes.</p>
 </blockquote>
 <blockquote>
-<p>Participants’ Time 1 predictions of their curiosity (M = 3.99, SD = 1.32) were lower than their actual curiosity ratings at Time 2, immediately before reading their responses (M = 4.34, SD = 1.25), t(105) = 2.88, p = .005, d = 0.27. Participants also underestimated how interesting they would find their responses. Predictions of interest at Time 1 (M = 3.54, SD = 1.01) were lower than ratings of actual interest experienced at Time 2 (M = 3.82, SD = 0.89), t(105) = 3.10, p = .003, d = 0.29.</p>
+<p>Participants exhibited a dramatic increase in reporting accuracy for the target letter’s color (70% correct) and identity (75% correct) on the first control trial (i.e., the trial immediately after the surprise trial). The improvement in each case was significant—color: 70% versus 30%, χ2(1, N = 40) = 6.40, p = .011, ϕ = .40; identity: 75% versus 25%, χ2(1, N = 40) = 10.00, p &lt; .005, ϕ = .50. Performance on these two tasks remained constant on the final three control trials (color: 75%, 70%, and 80% correct; identity: 75%, 80%, and 75% correct). Participants’ performance on the location task was almost the same on the surprise trial (80% correct) as on the control trials (80%, 85%, 80%, and 70% correct). These results indicate a crucial role for expectation in controlling participants’ ability to report the attributes of a consciously perceived object. Therefore, Experiment 1a showed that when participants did not expect to report a particular attribute of an attended object, they were incapable of doing so, even when that same attribute had reached awareness immediately prior to the test.</p>
 </blockquote>
-<p><strong>Note</strong> Make sure to use the original article for additional context and information about any necessary pre-processing steps. Also check for additional supplementary materials that may provide supporting documentation for analysis procedures. ——</p>
-<p>[PILOT/COPILOT DO NOT CHANGE THE CODE IN THE CHUNK BELOW]</p>
+<hr />
 </div>
 </div>
 <div id="step-1-load-packages-and-prepare-report-object" class="section level1">
 <h1>Step 1: Load packages and prepare report object</h1>
-<p>[PILOT/COPILOT Some useful packages are being loaded below. You can add any additional ones you might need too.]</p>
 <pre class="r"><code># load packages
 library(tidyverse) # for data munging
 library(knitr) # for kable table formating
-library(haven) # import and export &#39;SPSS&#39;, &#39;Stata&#39; and &#39;SAS&#39; Files
+library(haven) # import and export 'SPSS', 'Stata' and 'SAS' Files
 library(readxl) # import excel files
 library(ReproReports) # custom reporting functions
-library(broom)
-library(bootES)
-library(effsize)</code></pre>
-<p>[PILOT/COPILOT DO NOT MAKE CHANGES TO THE CODE CHUNK BELOW]</p>
+library(reticulate)
+use_python('/usr/local/bin/python3')</code></pre>
 <pre class="r"><code># Prepare report object. This will be updated automatically by the reproCheck function each time values are compared
 reportObject &lt;- data.frame(dummyRow = TRUE, reportedValue = NA, obtainedValue = NA, valueType = NA, percentageError = NA, comparisonOutcome = NA, eyeballCheck = NA)</code></pre>
 </div>
 <div id="step-2-load-data" class="section level1">
 <h1>Step 2: Load data</h1>
-<pre class="r"><code>data = read_sav(&quot;../data/Study1_Data.sav&quot;)</code></pre>
+<pre class="python"><code>import pandas as pd
+raw_data = pd.read_csv('data/materials-9859-Top-level_materials/12022-Exp1.csv', names=[
+    'sub_id', 'block_id', 'trial_id',
+    'color_target', 'identity_target', 'location_target',
+    'color_response', 'identity_response', 'location_response',
+    'color_accuracy', 'identity_accuracy', 'location_accuracy'
+])</code></pre>
 </div>
 <div id="step-3-tidy-data" class="section level1">
 <h1>Step 3: Tidy data</h1>
-<pre class="r"><code>data$id &lt;- seq.int(nrow(data)) 
-
-tidy_data &lt;- data %&gt;% 
-  filter(T2_Finished == 1) %&gt;% 
-  select(&quot;id&quot;, contains(&quot;Interesting&quot;), contains(&quot;Curious&quot;), contains(&quot;Meaningful&quot;), contains(&quot;Surprised&quot;), -contains(&quot;diff&quot;), -c(&quot;T1_Interesting&quot;, &quot;T2_Interesting&quot;,&quot;T1_Curious&quot;, &quot;T2_Curious&quot;,&quot;T1_Meaningful&quot;, &quot;T2_Meaningful&quot;,&quot;T1_Surprised&quot;, &quot;T2_Surprised&quot;)) %&gt;%
-  gather(measurement,score, -&quot;id&quot;) %&gt;% 
-  mutate(time = sub(&quot;(.*)_.*_.*&quot;,&quot;\\1&quot;, measurement),
-         item = sub(&quot;.*_(.*)_.*&quot;,&quot;\\1&quot;, measurement),
-         measure = tolower(sub(&quot;.*_.*_(.*)&quot;,&quot;\\1&quot;, measurement)), # case is inconsistent, so make all lowercase
-         interest_measure = factor(measure != &quot;curious&quot;, , labels = c(&quot;curious&quot;, &quot;interesting&quot;))) </code></pre>
 </div>
 <div id="step-4-run-analysis" class="section level1">
 <h1>Step 4: Run analysis</h1>
 <div id="pre-processing" class="section level2">
 <h2>Pre-processing</h2>
-<pre class="r"><code>aggregated_data = tidy_data %&gt;%  group_by(id,time,interest_measure) %&gt;% 
-  summarise(avg_score = mean(score, na.rm = T)) %&gt;% 
-  spread(time,avg_score) %&gt;%
-  mutate(diff = (T2 - T1)) %&gt;%
-  group_by(interest_measure)  
-
-curious_data &lt;- aggregated_data %&gt;% filter(interest_measure == &quot;curious&quot;)
-
-interesting_data &lt;- aggregated_data %&gt;% filter(interest_measure == &quot;interesting&quot;)
-
-un_aggregated_data = tidy_data %&gt;%  group_by(id,time,measure) %&gt;% 
-  summarise(avg_score = mean(score, na.rm = T)) %&gt;% 
-  spread(time,avg_score) %&gt;%
-  mutate(diff = (T2 - T1)) %&gt;%
-  group_by(measure) 
-  
-surprising_data &lt;- un_aggregated_data %&gt;% filter(measure == &quot;surprised&quot;)
-meaningful_data &lt;- un_aggregated_data %&gt;% filter(measure == &quot;meaningful&quot;)
-un_aggregated_interesting_data &lt;- un_aggregated_data %&gt;% filter(measure == &quot;interesting&quot;)</code></pre>
+<pre class="python"><code>processed_data = raw_data.copy()
+processed_data['presuprise'] = (processed_data.trial_id &lt; 156)
+processed_data['suprise'] = (processed_data.trial_id == 156)
+processed_data['control'] = (processed_data.trial_id &gt; 156)
+processed_data['control_id'] = processed_data.trial_id - 156</code></pre>
 </div>
 <div id="descriptive-statistics" class="section level2">
 <h2>Descriptive statistics</h2>
-<pre class="r"><code>boot_results = bootES(curious_data, R=10000, data.col=&quot;T1&quot;)
-reproCheck(&#39;3.99&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (3.99) and the obtained value (3.99) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.99          3.99      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.74&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (3.74) and the obtained value (3.73) differed by 0.27%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.74          3.73        ci       0.2673797
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.24&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4.24) and the obtained value (4.23) differed by 0.24%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.24          4.23        ci       0.2358491
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(curious_data, R=10000, data.col=&quot;T2&quot;)
-reproCheck(&#39;4.34&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (4.34) and the obtained value (4.34) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.34          4.34      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.10&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4.1) and the obtained value (4.09) differed by 0.24%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE           4.1          4.09        ci       0.2439024
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.58&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4.58) and the obtained value (4.57) differed by 0.22%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.58          4.57        ci       0.2183406
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(curious_data, R=10000, data.col=&quot;diff&quot;)
-reproCheck(&#39;0.35&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (0.35) and the obtained value (0.35) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.35          0.35      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.11&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (0.11) and the obtained value (0.11) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.11          0.11        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.59&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (0.59) and the obtained value (0.59) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.59          0.59        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>std_dev = sd(curious_data$T1)
-reproCheck(&#39;1.32&#39;, std_dev, valueType=&quot;sd&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for sd. The reported value (1.32) and the obtained value (1.32) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          1.32          1.32        sd               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>std_dev = sd(curious_data$T2)
-reproCheck(&#39;1.25&#39;, std_dev, valueType=&quot;sd&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for sd. The reported value (1.25) and the obtained value (1.25) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          1.25          1.25        sd               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>cohen_d = cohen.d(curious_data$T2,curious_data$T1)
-reproCheck(&#39;0.27&#39;, cohen_d$estimate, valueType=&quot;d&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for d. The reported value (0.27) and the obtained value (0.27) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.27          0.27         d               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(interesting_data, R=10000, data.col=&quot;T1&quot;)
-reproCheck(&#39;3.54&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (3.54) and the obtained value (3.54) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.54          3.54      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.34&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (3.34) and the obtained value (3.34) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.34          3.34        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.73&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (3.73) and the obtained value (3.73) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.73          3.73        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(interesting_data, R=10000, data.col=&quot;T2&quot;)
-reproCheck(&#39;3.82&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (3.82) and the obtained value (3.82) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.82          3.82      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.65&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (3.65) and the obtained value (3.65) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.65          3.65        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.00&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4) and the obtained value (3.98) differed by 0.5%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE             4          3.98        ci             0.5
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(interesting_data, R=10000, data.col=&quot;diff&quot;)
-reproCheck(&#39;0.29&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (0.29) and the obtained value (0.29) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.29          0.29      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.10&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (0.1) and the obtained value (0.11) differed by 10%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE           0.1          0.11        ci              10
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.47&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (0.47) and the obtained value (0.47) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.47          0.47        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>std_dev = sd(interesting_data$T1)
-reproCheck(&#39;1.01&#39;, std_dev, valueType=&quot;sd&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for sd. The reported value (1.01) and the obtained value (1.01) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          1.01          1.01        sd               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>std_dev = sd(interesting_data$T2)
-reproCheck(&#39;0.89&#39;, std_dev, valueType=&quot;sd&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for sd. The reported value (0.89) and the obtained value (0.89) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.89          0.89        sd               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>cohen_d = cohen.d(interesting_data$T2,interesting_data$T1)
-reproCheck(&#39;0.29&#39;, cohen_d$estimate, valueType=&quot;d&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for d. The reported value (0.29) and the obtained value (0.3) differed by 3.45%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.29           0.3         d        3.448276
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(surprising_data, R=10000, data.col=&quot;T1&quot;)
-reproCheck(&#39;2.84&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (2.84) and the obtained value (2.84) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          2.84          2.84      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;2.64&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (2.64) and the obtained value (2.64) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          2.64          2.64        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.05&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (3.05) and the obtained value (3.05) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.05          3.05        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(surprising_data, R=10000, data.col=&quot;T2&quot;)
-reproCheck(&#39;3.25&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (3.25) and the obtained value (3.25) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.25          3.25      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.06&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (3.06) and the obtained value (3.06) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.06          3.06        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.44&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (3.44) and the obtained value (3.44) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.44          3.44        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(surprising_data, R=10000, data.col=&quot;diff&quot;)
-reproCheck(&#39;0.40&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (0.4) and the obtained value (0.4) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE           0.4           0.4      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.19&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (0.19) and the obtained value (0.2) differed by 5.26%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.19           0.2        ci        5.263158
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.62&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (0.62) and the obtained value (0.63) differed by 1.61%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.62          0.63        ci        1.612903
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(meaningful_data, R=10000, data.col=&quot;T1&quot;)
-reproCheck(&#39;3.81&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (3.81) and the obtained value (3.81) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.81          3.81      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.60&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (3.6) and the obtained value (3.61) differed by 0.28%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE           3.6          3.61        ci       0.2777778
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.03&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4.03) and the obtained value (4.02) differed by 0.25%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.03          4.02        ci        0.248139
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(meaningful_data, R=10000, data.col=&quot;T2&quot;)
-reproCheck(&#39;4.04&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (4.04) and the obtained value (4.04) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.04          4.04      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.84&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for ci. The reported value (3.84) and the obtained value (3.84) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.84          3.84        ci               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.23&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4.23) and the obtained value (4.22) differed by 0.24%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.23          4.22        ci       0.2364066
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(meaningful_data, R=10000, data.col=&quot;diff&quot;)
-reproCheck(&#39;0.22&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (0.22) and the obtained value (0.22) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.22          0.22      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.03&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MAJOR_ERROR for ci. The reported value (0.03) and the obtained value (0.04) differed by 33.33%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.03          0.04        ci        33.33333
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MAJOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.42&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (0.42) and the obtained value (0.41) differed by 2.38%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.42          0.41        ci        2.380952
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(un_aggregated_interesting_data, R=10000, data.col=&quot;T1&quot;)
-reproCheck(&#39;3.95&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (3.95) and the obtained value (3.95) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.95          3.95      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;3.73&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (3.73) and the obtained value (3.72) differed by 0.27%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          3.73          3.72        ci       0.2680965
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.18&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4.18) and the obtained value (4.16) differed by 0.48%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.18          4.16        ci       0.4784689
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(un_aggregated_interesting_data, R=10000, data.col=&quot;T2&quot;)
-reproCheck(&#39;4.19&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (4.19) and the obtained value (4.19) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.19          4.19      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.00&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4) and the obtained value (3.99) differed by 0.25%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE             4          3.99        ci            0.25
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;4.38&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (4.38) and the obtained value (4.37) differed by 0.23%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          4.38          4.37        ci       0.2283105
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
-<pre class="r"><code>boot_results = bootES(un_aggregated_interesting_data, R=10000, data.col=&quot;diff&quot;)
-reproCheck(&#39;0.23&#39;, boot_results$t0, valueType=&quot;mean&quot;)</code></pre>
-<pre><code>## [1] &quot;MATCH for mean. The reported value (0.23) and the obtained value (0.23) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.23          0.23      mean               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.02&#39;, boot_results$bounds[1], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MAJOR_ERROR for ci. The reported value (0.02) and the obtained value (0.03) differed by 50%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.02          0.03        ci              50
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MAJOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&#39;0.45&#39;, boot_results$bounds[2], valueType=&quot;ci&quot;)</code></pre>
-<pre><code>## [1] &quot;MINOR_ERROR for ci. The reported value (0.45) and the obtained value (0.44) differed by 2.22%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.45          0.44        ci        2.222222
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MINOR_ERROR           NA</code></pre>
+<p>There are a lot of descriptive stats in this section of the paper, all of them are describing the proportion of correct answer in differed conditons.</p>
+<pre class="python"><code>#%%
+presuprise_trials = processed_data[processed_data.presuprise]
+presuprise_location_accuracy = presuprise_trials.location_accuracy.mean()
+print(f&quot;On the presurprise trials, {presuprise_location_accuracy * 100}% of responses &quot;
+      f&quot;in the location task were correct&quot;)</code></pre>
+<pre><code>## On the presurprise trials, 89.35483870967742% of responses in the location task were correct</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.89', obtainedValue=presuprise_location_accuracy, valueType='n')
+
+#%%</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           0.89  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>suprise_trials = processed_data[processed_data.suprise]
+suprise_color_accuracy = suprise_trials.color_accuracy.mean()
+suprise_color_total = suprise_trials.color_accuracy.count()
+suprise_color_correct = suprise_trials.color_accuracy.sum()
+print(f&quot;Only {suprise_color_correct} of {suprise_color_total} ({suprise_color_accuracy * 100}%) &quot;
+      f&quot;participants correctly reported the color of the target letter&quot;)</code></pre>
+<pre><code>## Only 6 of 20 (30.0%) participants correctly reported the color of the target letter</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.30', obtainedValue=suprise_color_accuracy, valueType='n')
+
+#%%</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.3  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>suprise_trials = processed_data[processed_data.suprise]
+suprise_identity_accuracy = suprise_trials.identity_accuracy.mean()
+suprise_identity_total = suprise_trials.identity_accuracy.count()
+suprise_identity_correct = suprise_trials.identity_accuracy.sum()
+print(f&quot;Furthermore, performance on the identity task &quot;
+      f&quot;({suprise_identity_accuracy * 100}% correct) was exactly at chance level.&quot;)</code></pre>
+<pre><code>## Furthermore, performance on the identity task (25.0% correct) was exactly at chance level.</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.25', obtainedValue=suprise_identity_accuracy, valueType='n')
+
+#%%</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           0.25  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>suprise_trials = processed_data[processed_data.suprise]
+suprise_location_accuracy = suprise_trials.location_accuracy.mean()
+print(f&quot;Participants’ performance on the location task was good ({suprise_location_accuracy * 100}% correct)&quot;)</code></pre>
+<pre><code>## Participants’ performance on the location task was good (80.0% correct)</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.80', obtainedValue=suprise_location_accuracy, valueType='n')
+
+#%%</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.8  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>first_control_trials = processed_data[processed_data.control_id == 1]
+first_control_color_accuracy = first_control_trials.color_accuracy.mean()
+first_control_color_total = first_control_trials.color_accuracy.count()
+first_control_color_correct = first_control_trials.color_accuracy.sum()
+first_control_identity_accuracy = first_control_trials.identity_accuracy.mean()
+first_control_identity_total = first_control_trials.identity_accuracy.count()
+first_control_identity_correct = first_control_trials.identity_accuracy.sum()
+print(f&quot;Participants exhibited a dramatic increase in reporting accuracy for &quot;
+      f&quot;the target letter’s color ({first_control_color_accuracy * 100}% correct) &quot;
+      f&quot;and identity ({first_control_identity_accuracy * 100}% correct) on the first control trial&quot;)</code></pre>
+<pre><code>## Participants exhibited a dramatic increase in reporting accuracy for the target letter’s color (70.0% correct) and identity (75.0% correct) on the first control trial</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.70', obtainedValue=first_control_color_accuracy, valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.7  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.75', obtainedValue=first_control_identity_accuracy, valueType='n')
+
+#%%</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           0.75  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>last_control_trials = [processed_data[processed_data.control_id == i] for i in [2, 3, 4]]
+last_control_color_accuracy_array = [trial.color_accuracy.mean() for trial in last_control_trials]
+last_control_identity_accuracy_array = [trial.identity_accuracy.mean() for trial in last_control_trials]
+print(f&quot;Performance on these two tasks remained constant on the final three control trials &quot;
+      f&quot;(color: {last_control_color_accuracy_array[0] * 100}%, &quot;
+      f&quot;{last_control_color_accuracy_array[1] * 100}%, and &quot;
+      f&quot;{last_control_color_accuracy_array[2] * 100}% correct; &quot;
+      f&quot;identity: {last_control_identity_accuracy_array[0] * 100}%, &quot;
+      f&quot;{last_control_identity_accuracy_array[1] * 100}%, and &quot;
+      f&quot;{last_control_identity_accuracy_array[2] * 100}% correct). &quot;)</code></pre>
+<pre><code>## Performance on these two tasks remained constant on the final three control trials (color: 75.0%, 70.0%, and 80.0% correct; identity: 75.0%, 80.0%, and 75.0% correct).</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.75', obtainedValue=last_control_color_accuracy_array[0], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           0.75  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.70', obtainedValue=last_control_color_accuracy_array[1], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.7  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.80', obtainedValue=last_control_color_accuracy_array[2], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.8  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.75', obtainedValue=last_control_identity_accuracy_array[0], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           0.75  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.80', obtainedValue=last_control_identity_accuracy_array[1], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.8  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.75', obtainedValue=last_control_identity_accuracy_array[2], valueType='n')
+
+#%%</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           0.75  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>all_control_trials = [processed_data[processed_data.control_id == i] for i in [1, 2, 3, 4]]
+all_control_location_accuracy_array = [trial.location_accuracy.mean() for trial in all_control_trials]
+print(f&quot;Participants’ performance on the location task was almost the &quot;
+      f&quot;same on the surprise trial ({suprise_location_accuracy * 100}% correct) as on the control trials &quot;
+      f&quot;({all_control_location_accuracy_array[0] * 100}%, {all_control_location_accuracy_array[1] * 100}%, &quot;
+      f&quot;{all_control_location_accuracy_array[2] * 100}%, and {all_control_location_accuracy_array[3] * 100}% correct).&quot;)</code></pre>
+<pre><code>## Participants’ performance on the location task was almost the same on the surprise trial (80.0% correct) as on the control trials (80.0%, 85.0%, 80.0%, and 70.0% correct).</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.80', obtainedValue=all_control_location_accuracy_array[0], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.8  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.85', obtainedValue=all_control_location_accuracy_array[1], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           0.85  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.80', obtainedValue=all_control_location_accuracy_array[2], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.8  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.70', obtainedValue=all_control_location_accuracy_array[3], valueType='n')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.7  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
 </div>
 <div id="inferential-statistics" class="section level2">
 <h2>Inferential statistics</h2>
-<pre class="r"><code>t_test_results &lt;- t.test(curious_data$T2,curious_data$T1,paired = T)
-reproCheck(&quot;.005&quot;,t_test_results$p.value,valueType = &#39;p&#39;)</code></pre>
-<pre><code>## [1] &quot;MATCH for p. The reported value (0.005) and the obtained value (0.005) differed by 0%. Note that the obtained value was rounded to 3 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE         0.005         0.005         p               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>reproCheck(&quot;2.88&quot;, t_test_results$statistic, valueType = &#39;t&#39;)</code></pre>
-<pre><code>## [1] &quot;MATCH for t. The reported value (2.88) and the obtained value (2.88) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          2.88          2.88         t               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>t_test_results &lt;- t.test(interesting_data$T2,interesting_data$T1,paired = T)
-reproCheck(&quot;.003&quot;,t_test_results$p.value,valueType = &#39;p&#39;)</code></pre>
-<pre><code>## [1] &quot;MAJOR_ERROR for p. The reported value (0.003) and the obtained value (0.002) differed by 33.33%. Note that the obtained value was rounded to 3 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE         0.003         0.002         p        33.33333
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2       MAJOR_ERROR           NA</code></pre>
-<pre class="r"><code>reproCheck(&quot;3.10&quot;, t_test_results$statistic, valueType = &#39;t&#39;)</code></pre>
-<pre><code>## [1] &quot;MATCH for t. The reported value (3.1) and the obtained value (3.1) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE           3.1           3.1         t               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>t_test_results &lt;- t.test(surprising_data$T2,surprising_data$T1,paired = T)
-reproCheck(&quot;P &lt; 0.001&quot;,t_test_results$p.value,valueType = &#39;p&#39;,eyeballCheck = T)</code></pre>
-<pre><code>## [1] &quot;MATCH for p. Eyeball comparison only.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE          &lt;NA&gt;            NA      &lt;NA&gt;              NA
-## 2    FALSE     P &lt; 0.001  0.0003701906         p              NA
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH         TRUE</code></pre>
-<pre class="r"><code>t_test_results &lt;- t.test(meaningful_data$T2,meaningful_data$T1,paired = T)
-reproCheck(&quot;.02&quot;,t_test_results$p.value,valueType = &#39;p&#39;)</code></pre>
-<pre><code>## [1] &quot;MATCH for p. The reported value (0.02) and the obtained value (0.02) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.02          0.02         p               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
-<pre class="r"><code>t_test_results &lt;- t.test(un_aggregated_interesting_data$T2,un_aggregated_interesting_data$T1,paired = T)
-reproCheck(&quot;.03&quot;,t_test_results$p.value,valueType = &#39;p&#39;)</code></pre>
-<pre><code>## [1] &quot;MATCH for p. The reported value (0.03) and the obtained value (0.03) differed by 0%. Note that the obtained value was rounded to 2 decimal places to match the reported value.&quot;</code></pre>
-<pre><code>##   dummyRow reportedValue obtainedValue valueType percentageError
-## 1     TRUE            NA            NA      &lt;NA&gt;              NA
-## 2    FALSE          0.03          0.03         p               0
-##   comparisonOutcome eyeballCheck
-## 1              &lt;NA&gt;           NA
-## 2             MATCH           NA</code></pre>
+<p>The two major inferential stats in the paper is about the improvement on subjects’ ability to identify the letter’s color and identity after the first suprise trial.</p>
+<p>I had some trouble to create the same chi-square test result in Python as the same in R. It turns out that <code>scipy.stats.chi2_contingency</code> with <code>correction=False</code> is roughly equal to <code>chisq.test</code> in R.</p>
+<pre class="python"><code>#%%
+import scipy.stats
+import math
+
+#%%
+scipy.stats.chisquare([suprise_color_correct, first_control_color_correct],
+)
+
+#%%</code></pre>
+<pre><code>## Power_divergenceResult(statistic=3.2, pvalue=0.07363827012030258)</code></pre>
+<pre class="python"><code>chi2, p, dof, _ = scipy.stats.chi2_contingency(
+    [
+        [suprise_color_correct, first_control_color_correct],
+        [suprise_color_total - suprise_color_correct, first_control_color_total - first_control_color_correct]
+    ], correction=False
+)
+total = suprise_color_total + first_control_color_total
+phi = math.sqrt(chi2 / total)
+
+print(f&quot;color: {first_control_color_accuracy * 100}% versus {suprise_color_accuracy * 100}%, &quot;
+      f&quot;χ2({dof}, N = {total}) = {chi2}, p = {p}, ϕ = {phi};&quot;)</code></pre>
+<pre><code>## color: 70.0% versus 30.0%, χ2(1, N = 40) = 6.4, p = 0.01141203638600166, ϕ = 0.4;</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='6.4', obtainedValue=chi2, valueType='x2')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            6.4  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.011', obtainedValue=p, valueType='p')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False          0.011  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.4', obtainedValue=phi, valueType='phi')
+
+#%%</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.4  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>chi2, p, dof, _ = scipy.stats.chi2_contingency(
+    [
+        [suprise_identity_correct, first_control_identity_correct],
+        [suprise_identity_total - suprise_identity_correct, 
+         first_control_identity_total - first_control_identity_correct]
+    ], correction=False
+)
+total = suprise_identity_total + first_control_identity_total
+phi = math.sqrt(chi2 / total)
+
+print(f&quot;identity: {first_control_identity_accuracy * 100}% versus {suprise_identity_accuracy * 100}%, &quot;
+      f&quot;χ2({dof}, N = {total}) = {chi2}, p = {p}, ϕ = {phi};&quot;)</code></pre>
+<pre><code>## identity: 75.0% versus 25.0%, χ2(1, N = 40) = 10.0, p = 0.001565402258002549, ϕ = 0.5;</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='10.0', obtainedValue=chi2, valueType='x2')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False           10.0  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='&lt;0.005', obtainedValue=p, valueType='p', eyeballCheck=True)</code></pre>
+<pre><code>##    dummyRow reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NA  ...                 NA         True
+## 1     False        &lt;0.005  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
+<pre class="python"><code>r.reproCheck(reportedValue='0.5', obtainedValue=phi, valueType='phi')</code></pre>
+<pre><code>##    dummyRow  reportedValue  ...  comparisonOutcome eyeballCheck
+## 0      True            NaN  ...                 NA         True
+## 1     False            0.5  ...              MATCH         True
+## 
+## [2 rows x 7 columns]</code></pre>
 </div>
 </div>
 <div id="step-5-conclusion" class="section level1">
 <h1>Step 5: Conclusion</h1>
-<p>It was successful! The errors in the Bootstrapped 95% CIs are very small (about the same size as the variation between different runs). There is also a small rounding error in p value.</p>
-<p>[PILOT/COPILOT DOD NOT EDIT THE CODE CHUNK BELOW]</p>
+<p>This reproduction is a success, I can reproduce every one of the descriptive and inferential statistics.</p>
 <pre class="r"><code>reportObject &lt;- reportObject %&gt;%
   filter(dummyRow == FALSE) %&gt;% # remove the dummy row
   select(-dummyRow) %&gt;% # remove dummy row designation
@@ -2127,27 +1847,24 @@ if(reportType == &quot;copilot&quot;){
 </div>
 <div id="session-information" class="section level1">
 <h1>Session information</h1>
-<p>[This function will output information about the package versions used in this report:]</p>
 <pre class="r"><code>devtools::session_info()</code></pre>
-<pre><code>## ─ Session info ──────────────────────────────────────────────────────────
+<pre><code>## - Session info ----------------------------------------------------------
 ##  setting  value                       
 ##  version  R version 3.6.1 (2019-07-05)
-##  os       macOS Catalina 10.15.1      
-##  system   x86_64, darwin19.0.0        
-##  ui       unknown                     
+##  os       Windows 10 x64              
+##  system   x86_64, mingw32             
+##  ui       RTerm                       
 ##  language (EN)                        
-##  collate  en_US.UTF-8                 
-##  ctype    en_US.UTF-8                 
+##  collate  English_Canada.1252         
+##  ctype    English_Canada.1252         
 ##  tz       America/Los_Angeles         
-##  date     2019-11-07                  
+##  date     2019-11-10                  
 ## 
-## ─ Packages ──────────────────────────────────────────────────────────────
+## - Packages --------------------------------------------------------------
 ##  package      * version date       lib
 ##  assertthat     0.2.1   2019-03-21 [1]
-##  backports      1.1.5   2019-10-02 [1]
-##  boot         * 1.3-22  2019-04-02 [2]
-##  bootES       * 1.2     2015-08-14 [1]
-##  broom        * 0.5.2   2019-04-07 [1]
+##  backports      1.1.4   2019-04-10 [1]
+##  broom          0.5.2   2019-04-07 [1]
 ##  callr          3.3.2   2019-09-22 [1]
 ##  cellranger     1.1.0   2016-07-27 [1]
 ##  cli            1.1.0   2019-03-19 [1]
@@ -2155,9 +1872,8 @@ if(reportType == &quot;copilot&quot;){
 ##  crayon         1.3.4   2017-09-16 [1]
 ##  desc           1.2.0   2018-05-01 [1]
 ##  devtools       2.2.1   2019-09-24 [1]
-##  digest         0.6.22  2019-10-21 [1]
+##  digest         0.6.21  2019-09-20 [1]
 ##  dplyr        * 0.8.3   2019-07-04 [1]
-##  effsize      * 0.7.6   2019-07-18 [1]
 ##  ellipsis       0.3.0   2019-09-20 [1]
 ##  evaluate       0.14    2019-05-28 [1]
 ##  forcats      * 0.4.0   2019-02-17 [1]
@@ -2167,8 +1883,8 @@ if(reportType == &quot;copilot&quot;){
 ##  glue           1.3.1   2019-03-12 [1]
 ##  gtable         0.3.0   2019-03-25 [1]
 ##  haven        * 2.1.1   2019-07-04 [1]
-##  hms            0.5.2   2019-10-30 [1]
-##  htmltools      0.4.0   2019-10-04 [1]
+##  hms            0.5.1   2019-08-23 [1]
+##  htmltools      0.3.6   2017-04-28 [1]
 ##  httr           1.4.1   2019-08-05 [1]
 ##  jsonlite       1.6     2018-12-07 [1]
 ##  knitr        * 1.25    2019-09-18 [1]
@@ -2177,26 +1893,28 @@ if(reportType == &quot;copilot&quot;){
 ##  lifecycle      0.1.0   2019-08-01 [1]
 ##  lubridate      1.7.4   2018-04-11 [1]
 ##  magrittr       1.5     2014-11-22 [1]
+##  Matrix         1.2-17  2019-03-22 [2]
 ##  memoise        1.1.0   2017-04-21 [1]
 ##  modelr         0.1.5   2019-08-08 [1]
 ##  munsell        0.5.0   2018-06-12 [1]
-##  nlme           3.1-140 2019-05-12 [2]
+##  nlme           3.1-141 2019-08-01 [1]
 ##  pillar         1.4.2   2019-06-29 [1]
-##  pkgbuild       1.0.6   2019-10-09 [1]
+##  pkgbuild       1.0.5   2019-08-26 [1]
 ##  pkgconfig      2.0.3   2019-09-22 [1]
 ##  pkgload        1.0.2   2018-10-29 [1]
 ##  prettyunits    1.0.2   2015-07-13 [1]
 ##  processx       3.4.1   2019-07-18 [1]
 ##  ps             1.3.0   2018-12-21 [1]
-##  purrr        * 0.3.3   2019-10-18 [1]
+##  purrr        * 0.3.2   2019-03-15 [1]
 ##  R6             2.4.0   2019-02-14 [1]
 ##  Rcpp           1.0.2   2019-07-25 [1]
 ##  readr        * 1.3.1   2018-12-21 [1]
 ##  readxl       * 1.3.1   2019-03-13 [1]
 ##  remotes        2.1.0   2019-06-24 [1]
-##  ReproReports * 0.1     2019-11-07 [1]
-##  rlang          0.4.1   2019-10-24 [1]
-##  rmarkdown      1.16    2019-10-01 [1]
+##  ReproReports * 0.1     2019-11-06 [1]
+##  reticulate   * 1.13    2019-07-24 [1]
+##  rlang          0.4.0   2019-06-25 [1]
+##  rmarkdown      1.15    2019-08-21 [1]
 ##  rprojroot      1.3-2   2018-01-03 [1]
 ##  rstudioapi     0.10    2019-03-19 [1]
 ##  rvest          0.3.4   2019-05-15 [1]
@@ -2204,7 +1922,7 @@ if(reportType == &quot;copilot&quot;){
 ##  sessioninfo    1.1.1   2018-11-05 [1]
 ##  stringi        1.4.3   2019-03-12 [1]
 ##  stringr      * 1.4.0   2019-02-10 [1]
-##  testthat       2.3.0   2019-11-05 [1]
+##  testthat       2.2.1   2019-07-25 [1]
 ##  tibble       * 2.1.3   2019-06-06 [1]
 ##  tidyr        * 1.0.0   2019-09-11 [1]
 ##  tidyselect     0.2.5   2018-10-11 [1]
@@ -2212,15 +1930,13 @@ if(reportType == &quot;copilot&quot;){
 ##  usethis        1.5.1   2019-07-04 [1]
 ##  vctrs          0.2.0   2019-07-05 [1]
 ##  withr          2.1.2   2018-03-15 [1]
-##  xfun           0.10    2019-10-01 [1]
+##  xfun           0.9     2019-08-21 [1]
 ##  xml2           1.2.2   2019-08-09 [1]
 ##  yaml           2.2.0   2018-07-25 [1]
 ##  zeallot        0.1.0   2018-01-28 [1]
 ##  source                                    
 ##  CRAN (R 3.6.1)                            
-##  CRAN (R 3.6.1)                            
-##  CRAN (R 3.6.1)                            
-##  CRAN (R 3.6.1)                            
+##  CRAN (R 3.6.0)                            
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
@@ -2277,6 +1993,7 @@ if(reportType == &quot;copilot&quot;){
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
+##  CRAN (R 3.6.0)                            
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
@@ -2288,11 +2005,22 @@ if(reportType == &quot;copilot&quot;){
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
 ##  CRAN (R 3.6.1)                            
-##  CRAN (R 3.6.1)                            
+##  CRAN (R 3.6.0)                            
 ##  CRAN (R 3.6.1)                            
 ## 
-## [1] /usr/local/lib/R/3.6/site-library
-## [2] /usr/local/Cellar/r/3.6.1_1/lib/R/library</code></pre>
+## [1] C:/Users/jacob/Documents/R/win-library/3.6
+## [2] C:/Program Files/R/R-3.6.1/library</code></pre>
+<pre class="python"><code>from sinfo import sinfo
+sinfo()</code></pre>
+<pre><code>## -----
+## pandas       0.25.1
+## scipy        1.3.1
+## -----
+## Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)]
+## Windows-10-10.0.17763-SP0
+## 8 logical CPU cores, Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+## -----
+## Session information updated at 2019-11-10 19:41</code></pre>
 </div>
 
 
