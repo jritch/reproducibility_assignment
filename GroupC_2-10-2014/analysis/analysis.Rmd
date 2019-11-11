@@ -252,6 +252,7 @@ It was successful! The errors in the Bootstrapped 95% CIs are very small (about 
 
 I think there is one error in the paper - they reported the effect size wrong. (0.29 instead of 0.21)
 
+Note: please see the co-pilot version here for more complete conclusions: https://rpubs.com/jritch/reproReportCopilot
 
 [PILOT/COPILOT DOD NOT EDIT THE CODE CHUNK BELOW]
 
